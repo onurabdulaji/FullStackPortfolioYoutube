@@ -15,7 +15,7 @@ public class CreateAboutCommandHandler : IRequestHandler<CreateAboutCommand, Cre
 
     public async Task<CreateAboutDto> Handle(CreateAboutCommand request, CancellationToken cancellationToken)
     {
-        var createdAboutDto = await _aboutService.CreateAboutAsync(request.CreateAboutDto);
-        return createdAboutDto;
+        var aboutResult = await _aboutService.CreateAboutAsync(request.CreateAboutDto);
+        return aboutResult;
     }
 }
