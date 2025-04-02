@@ -1,6 +1,13 @@
+using FullStackPortfolio.Persistence.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
+#region Persistence Layer Extension
+builder.Services.AddDatabaseExtension(builder.Configuration);
+#endregion
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
