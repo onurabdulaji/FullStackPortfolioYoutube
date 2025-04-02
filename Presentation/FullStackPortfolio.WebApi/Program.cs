@@ -1,3 +1,5 @@
+using FullStackPortfolio.Application.Extensions;
+using FullStackPortfolio.DTO.Extensions;
 using FullStackPortfolio.Persistence.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +9,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 #region Persistence Layer Extension
 builder.Services.AddDatabaseExtension(builder.Configuration);
+builder.Services.AddGenericPatternExtension();
+builder.Services.AddUnitOfWorkExtension();
+builder.Services.AddRepositoriesExtension();
+#endregion
+
+#region Application Layer Extension
+builder.Services.AddMediatorExtension();
+builder.Services.AddServiceAndManagersExtensions();
+builder.Services.AddAppMapsterExtension();
+#endregion
+
+#region Transfer Layer Extension
 #endregion
 
 builder.Services.AddControllers();

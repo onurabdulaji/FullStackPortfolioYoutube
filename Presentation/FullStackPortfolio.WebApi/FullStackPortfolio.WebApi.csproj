@@ -7,10 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\FullStackPortfolio.Application\FullStackPortfolio.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\FullStackPortfolio.Persistence\FullStackPortfolio.Persistence.csproj" />
   </ItemGroup>
 
